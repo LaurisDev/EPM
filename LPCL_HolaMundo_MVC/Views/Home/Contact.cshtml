@@ -1,0 +1,35 @@
+﻿@model List<LPCL_HolaMundo_MVC.Models.Cliente>
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact</h2>
+
+<table class="table">
+    <tr>
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>PeriodoConsumo</th>
+        <th>Estrato</th>
+        <th>MetaAhorroEnergia</th>
+        <th>ConsumoActualEnergia</th>
+        <th>PromedioConsumoAgua</th>
+        <th>ConsumoActualAgua</th>
+    </tr>
+    @foreach (var cliente in Model)
+    {
+        <tr>
+            <td>@cliente.Cedula</td>
+            <td>@cliente.Nombre</td>
+            <td>@cliente.Apellidos</td>
+            <td>@cliente.PeriodoConsumo</td>
+            <td>@cliente.Estrato</td>
+            <td>@cliente.MetaAhorroEnergia</td>
+            <td>@cliente.ConsumoActualEnergia</td>
+            <td>@cliente.PromedioConsumoAgua</td>
+            <td>@cliente.ConsumoActualAgua</td>
+        </tr>
+    }
+</table>

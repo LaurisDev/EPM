@@ -1,0 +1,72 @@
+﻿@model LPCL_HolaMundo_MVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Ingresar Cliente";
+}
+
+<h2>Ingresar Cliente</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cedula)
+        @Html.TextBoxFor(model => model.Cedula, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Cedula, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Apellidos)
+        @Html.TextBoxFor(model => model.Apellidos, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Apellidos, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PeriodoConsumo)
+        @Html.TextBoxFor(model => model.PeriodoConsumo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PeriodoConsumo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estrato)
+        @Html.TextBoxFor(model => model.Estrato, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Estrato, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MetaAhorroEnergia)
+        @Html.TextBoxFor(model => model.MetaAhorroEnergia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.MetaAhorroEnergia, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConsumoActualEnergia)
+        @Html.TextBoxFor(model => model.ConsumoActualEnergia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ConsumoActualEnergia, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PromedioConsumoAgua)
+        @Html.TextBoxFor(model => model.PromedioConsumoAgua, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PromedioConsumoAgua, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConsumoActualAgua)
+        @Html.TextBoxFor(model => model.ConsumoActualAgua, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ConsumoActualAgua, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Cliente</button>
+    if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+    {
+        <div class="alert alert-success">@ViewBag.Mensaje</div>
+    }
+}

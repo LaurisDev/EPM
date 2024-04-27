@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Buscar Cliente";
+}
+
+<h2>Buscar Cliente</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger">@ViewBag.Message</div>
+}
+
+<form method="post" asp-action="ActualizarCliente">
+    <div class="form-group">
+        <label for="cedulaClienteActualizar">Cédula del Cliente:</label>
+        <input type="text" class="form-control" id="cedulaClienteActualizar" name="cedulaClienteActualizar" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar Cliente</button>
+</form>

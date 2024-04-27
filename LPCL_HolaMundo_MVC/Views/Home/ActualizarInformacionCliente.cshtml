@@ -1,0 +1,72 @@
+﻿@model LPCL_HolaMundo_MVC.Models.Cliente
+
+@{
+    ViewBag.Title = "Actualizar Cliente";
+}
+
+<h2>Actualizar Cliente</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+
+@using (Html.BeginForm("ActualizarInformacionCliente", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.Cedula)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="Nombre" class="btn btn-primary">Actualizar Nombre</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Apellidos)
+        @Html.TextBoxFor(model => model.Apellidos, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="Apellidos" class="btn btn-primary">Actualizar Apellidos</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PeriodoConsumo)
+        @Html.TextBoxFor(model => model.PeriodoConsumo, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="PeriodoConsumo" class="btn btn-primary">Actualizar Periodo Consumo</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Estrato)
+        @Html.TextBoxFor(model => model.Estrato, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="Estrato" class="btn btn-primary">Actualizar estrato</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MetaAhorroEnergia)
+        @Html.TextBoxFor(model => model.MetaAhorroEnergia, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="MetaAhorroEnergia" class="btn btn-primary">Actualizar meta ahorro energia</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConsumoActualEnergia)
+        @Html.TextBoxFor(model => model.ConsumoActualEnergia, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="ConsumoActualEnergia" class="btn btn-primary">Actualizar consumo actual energia</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PromedioConsumoAgua)
+        @Html.TextBoxFor(model => model.PromedioConsumoAgua, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="PromedioConsumoAgua" class="btn btn-primary">Actualizar Promedio Consumo agua</button>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConsumoActualAgua)
+        @Html.TextBoxFor(model => model.ConsumoActualAgua, new { @class = "form-control" })
+    </div>
+    <button type="submit" name="campo" value="ConsumoActualAgua" class="btn btn-primary">Actualizar consumo actual agua</button>
+
+    <!-- Agregar más botones para otros campos según sea necesario -->
+}

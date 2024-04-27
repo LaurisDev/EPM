@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPCL_HolaMundo_MVC", "LPCL_HolaMundo_MVC\LPCL_HolaMundo_MVC.csproj", "{3624DD32-8641-47C6-B983-5B3706918B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPCL_HolaMundo_MVCTests", "LPCL_HolaMundo_MVCTests\LPCL_HolaMundo_MVCTests.csproj", "{22FE4333-4A16-4FFB-9908-75CA4B4BBED9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3624DD32-8641-47C6-B983-5B3706918B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3624DD32-8641-47C6-B983-5B3706918B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3624DD32-8641-47C6-B983-5B3706918B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3624DD32-8641-47C6-B983-5B3706918B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22FE4333-4A16-4FFB-9908-75CA4B4BBED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FE4333-4A16-4FFB-9908-75CA4B4BBED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FE4333-4A16-4FFB-9908-75CA4B4BBED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FE4333-4A16-4FFB-9908-75CA4B4BBED9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35510432-8A57-486B-B9CF-ACA19E898260}
+	EndGlobalSection
+EndGlobal

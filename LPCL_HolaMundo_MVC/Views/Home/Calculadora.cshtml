@@ -1,0 +1,159 @@
+﻿@model LPCL_HolaMundo_MVC.Models.CalculadoraFacturacion
+
+@{
+    ViewBag.Title = "Calculadora";
+}
+<style>
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .menu-button {
+        width: 350px;
+        height: 42px;
+        margin-left: 10px;
+    }
+
+    .menu-input {
+        width: 250px;
+        height: 32px;
+        margin-right: 10px;
+    }
+</style>
+
+<h2>Calculadora</h2>
+
+@using (Html.BeginForm("Calculadora", "Home", FormMethod.Post))
+{
+    <div class="menu-container">
+        <div class="menu-container">
+
+            <button type="submit" name="option" value="CalcularPromedioConsumoEnergia" class="menu-button">Calcular Promedio de Consumo de Energía</button>
+        </div>
+    </div>
+
+    if (ViewBag.PromedioConsumoEnergia != null)
+    {
+        <div>El promedio de consumo de energia es: @ViewBag.PromedioConsumoEnergia </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularTotalDescuentos" class="menu-button">Calcular Total de Descuentos por Incentivo de Energía</button>
+    </div>
+
+    if (ViewBag.TotaldecuestosCliente != null)
+    {
+        <div> El total de descuentos es de: @ViewBag.TotaldecuestosCliente </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularTotalExcesoAgua" class="menu-button">Calcular Total de Exceso de Agua</button>
+    </div>
+
+    if (ViewBag.TotalExcesoAgua != null)
+    {
+        <div> El total de exceso de agua es de: @ViewBag.TotalExcesoAgua </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularPorcentajeConsumoExcesoAguaPorEstrato" class="menu-button">Calcular Porcentaje de Consumo Excesivo de Agua por Estrato</button>
+    </div>
+
+    if (ViewBag.porcentajeExcesoPorEstrato != null)
+    {
+        <div>
+            <h3>Porcentaje de exceso de agua por estrato:</h3>
+            <ul>
+                @foreach (var kvp in ViewBag.porcentajeExcesoPorEstrato)
+                {
+                    <li>Estrato @kvp.Key: @kvp.Value.ToString("0.##")%</li>
+                }
+            </ul>
+        </div>
+    }
+
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularMayorAhorroAguaPorEstrato" class="menu-button">Calcular Mayor Ahorro de Agua por Estrato</button>
+    </div>
+    if (ViewBag.resultado != null)
+    {
+        <div>
+            <h3>Mayor ahorro de agua por estrato:</h3>
+            <ul>
+                @foreach (var kvp in ViewBag.resultado)
+                {
+                    <li>Estrato @kvp.Key: @kvp.Value.ToString("0.##")%</li>
+
+                }
+            </ul>
+        </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularConsumoEnergiaPorEstrato" class="menu-button">Calcular Consumo de Energía por Estrato</button>
+    </div>
+    if (ViewBag.resultadoCalcularConsumoEnergiaPorEstrato != null)
+    {
+        <div>
+            <h3>Consumo de energía por estrato:</h3>
+            <ul>
+                <li>Mayor consumo de energía: Estrato @ViewBag.resultadoCalcularConsumoEnergiaPorEstrato["MayorConsumoEnergia"]</li>
+                <li>Menor consumo de energía: Estrato @ViewBag.resultadoCalcularConsumoEnergiaPorEstrato["MenorConsumoEnergia"]</li>
+            </ul>
+        </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="ContarClientesConConsumoMayorPromedio" class="menu-button">Contar Clientes con Consumo Mayor al Promedio</button>
+    </div>
+
+    if (ViewBag.clientesConConsumoMayorPromedio != null)
+    {
+        <div> La cantidad de clientes con consumo de agua mayor al promedio es: @ViewBag.clientesConConsumoMayorPromedio </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="MostrarClienteMayorDesfase" class="menu-button">Mostrar Cliente con Mayor Desfase en el Consumo de Energía</button>
+    </div>
+
+    if (ViewBag.ClienteMayorDesfase != null)
+    {
+        <div>
+            <p>Cédula: @ViewBag.ClienteMayorDesfase.Cedula</p>
+            <p>Nombre: @ViewBag.ClienteMayorDesfase.Nombre</p>
+            <p>Apellidos: @ViewBag.ClienteMayorDesfase.Apellidos</p>
+            <p>Periodo Consumo: @ViewBag.ClienteMayorDesfase.PeriodoConsumo</p>
+            <p>Estrato: @ViewBag.ClienteMayorDesfase.Estrato</p>
+            <p>MetaAhorroEnergia: @ViewBag.ClienteMayorDesfase.MetaAhorroEnergia</p>
+            <p>ConsumoActualEnergia: @ViewBag.ClienteMayorDesfase.ConsumoActualEnergia</p>
+            <p>PromedioConsumoAgua: @ViewBag.ClienteMayorDesfase.PromedioConsumoAgua</p>
+            <p>ConsumoActualAgua: @ViewBag.ClienteMayorDesfase.ConsumoActualAgua</p>
+
+        </div>
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularTotalPagadoEnergia" class="menu-button">Calcular Total a Pagar por concepto de energia  </button>
+    </div>
+
+    if (ViewBag.TotalPagadoEnergia != null)
+    {
+        <div>El total pagado por los clientes por concepto de energía es: @ViewBag.TotalPagadoEnergia</div>
+
+    }
+
+    <div class="menu-container">
+        <button type="submit" name="option" value="CalcularTotalPagadoAgua" class="menu-button">Calcular Total a Pagar por concepto de agua </button>
+    </div>
+
+    if (ViewBag.TotalPagadoAgua != null)
+    {
+        <div>El total pagado por los clientes por concepto de energía es: @ViewBag.TotalPagadoAgua</div>
+
+    }
+
+}

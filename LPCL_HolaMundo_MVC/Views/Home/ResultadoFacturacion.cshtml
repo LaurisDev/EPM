@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Resultado de Facturación";
+}
+
+<h2>Resultado de Facturación</h2>
+
+@if (ViewBag.ValorPagar != null)
+{
+    <p>El valor a pagar es: @ViewBag.ValorPagar</p>
+}
+
+
+@Html.ActionLink("Volver al inicio", "Index", "Home")

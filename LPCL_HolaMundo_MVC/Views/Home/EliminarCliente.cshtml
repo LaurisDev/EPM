@@ -1,0 +1,21 @@
+﻿@model List<LPCL_HolaMundo_MVC.Models.Cliente>
+
+@{
+    ViewBag.Title = "Eliminar cliente";
+}
+
+<h2>Eliminar Cliente</h2>
+
+@using (Html.BeginForm("EliminarCliente", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Ingrese la cédula del cliente que desea eliminar:</label>
+        <input name="cedula" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Eliminar Cliente</button>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-info">@ViewBag.Message</div>
+}

@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Calculo de Facturación";
+}
+
+<h2>Calculo de Facturación</h2>
+
+@using (Html.BeginForm("CalcularValorPagar", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Cedula del cliente:")
+        @Html.TextBox("cedula", null, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-info">@ViewBag.ErrorMessage</div>
+}
