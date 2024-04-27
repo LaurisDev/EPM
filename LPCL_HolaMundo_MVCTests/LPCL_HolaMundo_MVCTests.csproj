@@ -50,8 +50,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="CalculadoraFacturacionTests.cs" />
+    <Compile Include="ClienteTest.cs" />
+    <Compile Include="MenuTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LPCL_HolaMundo_MVC\LPCL_HolaMundo_MVC.csproj">
+      <Project>{3624dd32-8641-47c6-b983-5b3706918b31}</Project>
+      <Name>LPCL_HolaMundo_MVC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
